@@ -12,4 +12,12 @@ function checkPost($name){
     }
 }
 
+function getPost($name){
+    if(!isset($_POST[$name])){
+        return NULL;
+    } else {
+        return $_POST[$name];
+    }
+}
+
 ?>

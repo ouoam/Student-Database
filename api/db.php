@@ -18,4 +18,23 @@ catch(PDOException $e)
     {
         printError("Database connection failed, ".$e->getMessage());
     }
+
+function addData($table, $data){
+    global $db_conn;
+
+    $sqlKey   = '';
+    $sqlValue = '';
+    $bind     = array();
+    foreach($data as $key => $value){
+        $sqlKey       .= "`$key`, ";
+        $sqlValue     .= ":$key, ";
+        $bind[":$key"] = $value;
+    }
+    $sqlKey   = str_split($sqlKey  , strlen($sqlKey)   - 2)[0];
+    $sqlValue = str_split($sqlValue, strlen($sqlValue) - 2)[0];
+
+    $sth = $db_conn->prepare("INSERT INTO `$table` ($sqlKey) VALUES ($sqlValue);");
+    $sth->execute($bind);
+    return $db_conn->lastInsertId();
+}
 ?>

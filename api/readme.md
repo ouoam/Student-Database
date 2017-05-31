@@ -9,6 +9,7 @@ ppID|Person ID
 blood|Blood group
 origin|Origin
 national|Nationality
+phone|Student phone
 pic|Picture URL
 
 ### School
