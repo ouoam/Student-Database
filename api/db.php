@@ -1,10 +1,10 @@
 <?php
-$database_type     = "mysql";
-$database_default  = "std_db";
-$database_hostname = "localhost";
-$database_username = "root";
-$database_password = "1234";
-$database_port     = "3306";
+$database_type     = 'mysql';
+$database_default  = 'std_db';
+$database_hostname = 'localhost';
+$database_username = 'root';
+$database_password = '';
+$database_port     = '3306';
 
 header("Content-Type: application/json; charset=UTF-8");
 include_once("function.php");
@@ -16,6 +16,6 @@ try {
     }
 catch(PDOException $e)
     {
-        printError("Database connection failed", $e->getMessage());
+        printError("Database connection failed, ".$e->getMessage());
     }
 ?>
