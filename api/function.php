@@ -1,22 +1,57 @@
 <?php
 
-function printError($massege){
+function printError($massege) {
     $dataout['status'] = "error";
-    $dataout['error']  = $massege;
+    $dataout['detail'] = $massege;
     echo json_encode($dataout);
-    exit;}
+    exit;
+}
 
-function checkPost($name){
-    if(!isset($_POST[$name])){
-        printError("'$name' key is not set");
+function printSuscess($key = NULL, $data = NULL) {
+    $dataout['status'] = "suscess";
+    if(!is_null($key)) {
+        $dataout[$key] = $data;
+    }
+    echo json_encode($dataout);
+}
+
+function getMulPOST($nonReqKey = array(), $reqKey = array()) {
+    $data = array();
+
+    foreach($nonReqKey as $key) {
+        if(isset($_POST[$key])) {
+            $data[$key] = getPOST($key);
+        }
+    }
+
+    foreach($reqKey as $key) {
+        $data[$key] = getPOST($key, TRUE);
+    }
+
+    return $data;
+}
+
+function getPOST($name, $req = FALSE) {
+    if(!isset($_POST[$name])) {
+        if($req) {
+            printError("POST '$name' key is not set");
+        } else {
+            return NULL;
+        }
+    } else {
+        return $_POST[$name];
     }
 }
 
-function getPost($name){
-    if(!isset($_POST[$name])){
-        return NULL;
+function getGET($name, $req = FALSE) {
+    if(!isset($_GET[$name])) {
+        if($req) {
+            printError("GET '$name' key is not set");
+        } else {
+            return NULL;
+        }
     } else {
-        return $_POST[$name];
+        return $_GET[$name];
     }
 }
 
