@@ -72,6 +72,7 @@ CREATE TABLE `std_personality` (
   `pName` varchar(20) DEFAULT NULL COMMENT 'Prefix name',
   `fName` varchar(20) DEFAULT NULL COMMENT 'First name',
   `lName` varchar(20) DEFAULT NULL COMMENT 'Last name',
+  `nName` varchar(20) DEFAULT NULL COMMENT 'Nick name',
   `bDay` date DEFAULT NULL COMMENT 'Birth day',
   `ppID` varchar(20) DEFAULT NULL COMMENT 'Person ID',
   `blood` enum('A','B','O','AB') DEFAULT NULL COMMENT 'Blood group',

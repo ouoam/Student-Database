@@ -4,6 +4,7 @@ Name|Description
 pName|Prefix name
 fName|First name
 lName|Last name
+nName|Nick name
 bDay|Birth day
 ppID|Person ID
 blood|Blood group

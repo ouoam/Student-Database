@@ -5,7 +5,7 @@ include_once("function.php");
 switch(getGET("part", TRUE)) {
     case 1: //Personality
         $reqKey = array('pName', 'fName', 'lName');
-        $nonReqKey = array('bDay', 'ppID', 'blood', 'origin', 'national', 'phone', 'pic');
+        $nonReqKey = array('nName', 'bDay', 'ppID', 'blood', 'origin', 'national', 'phone', 'pic');
         $table = 'std_personality';
         break;
 
