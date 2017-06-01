@@ -49,18 +49,18 @@
                                       </li>
                                   </ul>
                               </div>
-                              <form class="form-horizontal" name="regist" method="post" id="default">
+                              <form class="form-horizontal" name="regist" id="regist" method="post">
                                   <fieldset title="ข้อมูลส่วนตัว" class="step" id="default-step-0">
                                       <legend> </legend>
                                       <div class="form-group">
                                           <div class="col-sm-2">
                                                   <label class="control-label">รหัสนักเรียน</label>
-                                                  <input type="text" placeholder="" data-mask="9 9 9 9 9" class="form-control" name="stdID" id="stdID">
+                                                  <input type="text" placeholder="" data-mask="9 9 9 9 9" class="form-control" id="stdID">
                                                   <span class="help-inline"></span>
                                           </div>
                                           <div class="col-lg-2">
                                               <label class="control-label">คำนำหน้า</label>
-                                              <select class="form-control m-bot15" name="pName">
+                                              <select class="form-control m-bot15" id="pName">
                                                 <option value="Mr">นาย</option>
                                                 <option value="Miss">นาง</option>
                                                 <option value="S_Mr">เด็กชาย</option>
@@ -69,29 +69,29 @@
                                           </div>
                                           <div class="col-lg-2">
                                               <label class="control-label">ชื่อ</label>
-                                              <input type="text" class="form-control" placeholder="" name="fName">
+                                              <input type="text" class="form-control" placeholder="" id="fName">
                                           </div>
                                           <div class="col-lg-2">
                                               <label class=" control-label">นามสกุล</label>
-                                              <input type="text" class="form-control" placeholder="" name="lName">
+                                              <input type="text" class="form-control" placeholder="" id="lName">
                                           </div>
                                           <div class="col-lg-2">
                                               <label class="control-label">ชื่อเล่น</label>
-                                              <input type="text" class="form-control" placeholder="" name="nName">
+                                              <input type="text" class="form-control" placeholder="" id="nName">
                                           </div>
                                           <div class="col-sm-2">
                                                   <label class="control-label">วันเกิด</label>
-                                                  <input type="text" placeholder="" data-mask="99 / 99 / 9999" class="form-control" name="bDay">
+                                                  <input type="text" placeholder="" data-mask="99 / 99 / 9999" class="form-control" id="bDay">
                                                   <span class="help-inline">วัน/เดือน/ปี พ.ศ</span>
                                           </div>
                                           <div class="col-sm-3">
                                                   <label class="control-label">รหัสประชาชน</label>
-                                                  <input type="text" placeholder="" data-mask="9 - 9999 - 99999 - 99 - 9" class="form-control" name="ppID">
+                                                  <input type="text" placeholder="" data-mask="9 - 9999 - 99999 - 99 - 9" class="form-control" id="ppID">
                                                   <span class="help-inline"></span>
                                           </div>
                                           <div class="col-lg-1">
                                               <label class="control-label">กรุ๊ปเลือด</label>
-                                              <select class="form-control m-bot15" name="blood">
+                                              <select class="form-control m-bot15" id="blood">
                                                 <option value="O">O</option>
                                                 <option value="B">B</option>
                                                 <option value="A">A</option>
@@ -100,111 +100,133 @@
                                           </div>
                                           <div class="col-lg-2">
                                               <label class=" control-label">เชื้อชาติ</label>
-                                              <input type="text" class="form-control" placeholder="" name="origin">
+                                              <input type="text" class="form-control" placeholder="" id="origin">
                                           </div>
                                           <div class="col-lg-2">
                                               <label class=" control-label">สัญชาติ</label>
-                                              <input type="text" class="form-control" placeholder="" name="national">
-                                          </div>
-										  <div class="col-lg-2">
-                                              <label class=" control-label">สัญชาติ</label>
-                                              <input type="text" class="form-control" placeholder="" name="national">
+                                              <input type="text" class="form-control" placeholder="" id="national">
                                           </div>
                                           <div class="col-lg-2">
                                               <label class="control-label">เบอร์โทรศัพท์</label>
-                                              <input type="text" class="form-control" placeholder="" data-mask="999 - 9999999" name="phone">
+                                              <input type="text" class="form-control" placeholder="" data-mask="999 - 9999999" id="phone">
                                           </div>
-										  <div class="col-lg-1">
+                                          
+                                    
+										  <div class="col-lg-2">
                                               <label class="control-label">หอพัก</label>
-                                              <select class="form-control m-bot15" name="dorm">
-                                                <option value="1">*****</option>
-                                                <option value="2">*****</option>
-                                                <option value="3">*****</option>
-                                                <option value="4">*****</option>
-												<option value="5">*****</option>
+                                              <select class="form-control m-bot15" id="dorm">
+                                                <option value="1">จุลินทิรา</option>
+                                                <option value="2">จุฬาพิลาส</option>
+                                                <option value="3">ภรคุณาศัย</option>
+                                                <option value="4">วลัยคุณาศักดิ์</option>
+												<option value="5">ลักษณานุสรณ์</option>
                                               </select>
                                           </div>
-                                      </div>
+                                     </div>
                                       <div class="form-group">
                                           <div class="col-lg-3">
                                               <label class="control-label">ชื่อบิดา</label>
-                                              <input type="text" class="form-control" placeholder="" name="ffName">
+                                              <input type="text" class="form-control" placeholder="" id="ffName">
                                           </div>
 										  <div class="col-lg-3">
                                               <label class="control-label">นามสกุล</label>
-                                              <input type="text" class="form-control" placeholder="" name="flName">
+                                              <input type="text" class="form-control" placeholder="" id="flName">
                                           </div>
                                           <div class="col-lg-3">
                                               <label class="control-label">อาชีพ</label>
-                                              <input type="text" class="form-control" placeholder="" name="fJob">
+                                              <input type="text" class="form-control" placeholder="" id="fJob">
                                           </div>
                                           <div class="col-lg-3">
                                               <label class="control-label">เบอร์โทรศัพท์</label>
-                                              <input type="text" class="form-control" placeholder="" data-mask="999 - 9999999" name="fPhone">
+                                              <input type="text" class="form-control" placeholder="" data-mask="999 - 9999999" id="fPhone">
                                           </div>
                                       </div>
                                       <div class="form-group">
                                           <div class="col-lg-3">
                                               <label class="control-label">ชื่อมารดา</label>
-                                              <input type="text" class="form-control" placeholder="" name="mfName">
+                                              <input type="text" class="form-control" placeholder="" id="mfName">
                                           </div>
 										  <div class="col-lg-3">
                                               <label class="control-label">นามสกุล</label>
-                                              <input type="text" class="form-control" placeholder="" name="mlName">
+                                              <input type="text" class="form-control" placeholder="" id="mlName">
                                           </div>
                                           <div class="col-lg-3">
                                               <label class="control-label">อาชีพ</label>
-                                              <input type="text" class="form-control" placeholder="" name="mJob">
+                                              <input type="text" class="form-control" placeholder="" id="mJob">
                                           </div>
                                           <div class="col-lg-3">
                                               <label class="control-label">เบอร์โทรศัพท์</label>
-                                              <input type="text" class="form-control" placeholder="" data-mask="999 - 9999999" name="mPhone">
+                                              <input type="text" class="form-control" placeholder="" data-mask="999 - 9999999" id="mPhone">
                                           </div>
                                       </div>
 
                                   </fieldset>
-                                  <fieldset title="ที่อยู่" class="step" id="default-step-1" >
+                                  <fieldset title="ที่อยู่" class="step" id="default-step-2" >
                                       <legend> </legend>
                                       <div class="form-group">
-                                          <div class="col-lg-1">
+                                          <div class="col-lg-2">
                                               <label class="control-label">บ้านเลขที่</label>
-                                              <input type="text" class="form-control" placeholder="" name="addNo">
+                                              <input type="text" class="form-control" placeholder="" id="addNo">
                                           </div>
                                           <div class="col-lg-1">
                                               <label class="control-label">หมู่</label>
-                                              <input type="text" class="form-control" placeholder="" name="addArea">
+                                              <input type="text" class="form-control" placeholder="" id="addArea">
                                           </div>
 										  <div class="col-lg-2">
                                               <label class="control-label">หมู่บ้าน</label>
-                                              <input type="text" class="form-control" placeholder="" name="addVill">
+                                              <input type="text" class="form-control" placeholder="" id="addVill">
                                           </div>
                                           <div class="col-lg-2">
                                               <label class="control-label">ซอย</label>
-                                              <input type="text" class="form-control" placeholder="" name="addRoad">
+                                              <input type="text" class="form-control" placeholder="" id="addRoad">
                                           </div>
                                           <div class="col-lg-2">
                                               <label class="control-label">ถนน</label>
-                                              <input type="text" class="form-control" placeholder="" name="addStreet">
+                                              <input type="text" class="form-control" placeholder="" id="addStreet">
                                           </div>
                                           <div class="col-lg-2">
                                               <label class="control-label">ตำบล/เขต</label>
-                                              <input type="text" class="form-control" placeholder="" name="addSubDis">
+                                              <input type="text" class="form-control" placeholder="" id="addSubDis">
                                           </div>
                                           <div class="col-lg-2">
                                               <label class="control-label">อำเภอ/แขวง</label>
-                                              <input type="text" class="form-control" placeholder="" name="addDis">
+                                              <input type="text" class="form-control" placeholder="" id="addDis">
                                           </div>
                                           <div class="col-lg-2">
                                               <label class="control-label">จังหวัด</label>
-                                              <input type="text" class="form-control" placeholder="" name="addPro">
+                                              <input type="text" class="form-control" placeholder="" id="addPro">
                                           </div>
 										  <div class="col-lg-2">
                                               <label class="control-label">รหัสไปรษณีย์</label>
-                                              <input type="text" class="form-control" placeholder="" name="addZip">
+                                              <input type="text" class="form-control" placeholder="" id="addZip">
                                           </div>
                                       </div>
-                                  </fieldset>                          
-                                  <input type="submit" name="submit" class="finish btn btn-danger" value="บันทึก"/>
+                                  </fieldset>
+                                  <fieldset title="อัปโหลดรูป" class="step" id="default-step-3" >
+                                      <legend> </legend>
+                                      <div class="form-group">
+                                            <div class="form-group last">
+                                          <label class="control-label col-md-2"></label>
+                                          <label class="control-label col-md-2">รูปประจำตัว</label>
+                                          <div class="col-md-8">
+                                              <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                  <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                                      <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
+                                                  </div>
+                                                  <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                                  <div>
+                                                   <span class="btn btn-white btn-file">
+                                                   <span class="fileupload-new"><i class="fa fa-paper-clip"></i> เลือกรูป</span>
+                                                   <span class="fileupload-exists"><i class="fa fa-undo"></i> เปลี่ยน</span>
+                                                   <input type="file" class="default" />
+                                                   </span>
+                                                </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      </div>
+                                  </fieldset>
+                                  <button type="button" class="finish btn btn-danger" id="save">บันทึก</button>
                               </form>
                           </div>
                       </section>
@@ -232,24 +254,50 @@
     <script src="js/common-scripts.js"></script>
     <script type="text/javascript" src="js/ga.js"></script>
     <script type="text/javascript" src="assets/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+	<script type="text/javascript" src="assets/bootstrap-fileupload/bootstrap-fileupload.js"></script>
 
     <!--script for this page-->
     <script src="js/jquery.stepy.js"></script>
 
 
   <script>
+//step wizard
 
-      //step wizard
+$(function() {
+    $('#default').stepy({
+        backLabel: 'ย้อนกลับ',
+        block: true,
+        nextLabel: 'ถัดไป',
+        titleClick: true,
+        titleTarget: '.stepy-tab'
+    });
+});
 
-      $(function() {
-          $('#default').stepy({
-              backLabel: 'ย้อนกลับ',
-              block: true,
-              nextLabel: 'ถัดไป',
-              titleClick: true,
-              titleTarget: '.stepy-tab'
-          });
-      });
+$("#save").click(function() {
+/*
+    var IDs = [];
+    var Pdata = [];
+    $("#regist").find("input,select").each(function(){
+        IDs.push(this.id);
+        Pdata[this.id] = $(this.id).val()
+    });
+
+    console.log(Pdata);
+*/
+
+    $.ajax({
+	    method : "POST",
+	    url    : "api/test.php",
+	    data   : {'form': $("#regist").serialize()}
+	}).done(function( msg ) {
+        console.log(msg);
+		//if(msg=="OK"){
+		//	$("#mDel").modal('hide');
+		//	loadDevice();
+		//}
+	});
+
+});
   </script>
 
 
