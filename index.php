@@ -43,7 +43,7 @@
                                                         <i class=" fa fa-exclamation-sign">Database Design</i><a href="#"> -- อาจารย์สุรจิตร นามวิบูรณ์</a><br>
                                                         <i class=" fa fa-exclamation-sign">Web & System Developer</i><a href="#">  -- นายรวีโรจน์ ทองดี</a><br>
                                                         <i class=" fa fa-exclamation-sign">UX & Form Developer</i><a href="#"> -- นายภูมิไผท จันทรศรวงศ์</a><br>
-                                                        <i class=" fa fa-exclamation-sign">Resource & Support</i><a href="#"> -- อาจารย์พุทธพร อินอ่อน</a>
+                                                        <i class=" fa fa-exclamation-sign">Resource</i><a href="#"> -- อาจารย์พุทธพร อินอ่อน</a>
                                                       </div>
                                                   </div>
                                               </div>
@@ -56,7 +56,7 @@
                                                       <span class="arrow"></span>
                                                       <span class="timeline-icon red"></span>
                                                       <span class="timeline-date">08:30 น.</span>
-                                                      <h1 class="red">1 มิถุนายน </h1>
+                                                      <h1 class="red">5 มิถุนายน </h1>
                                                       <h5>ทดลองใช้งานระบบ เปิดให้นักเรียนลงทะเบียน</h5>
                                                   </div>
                                               </div>
