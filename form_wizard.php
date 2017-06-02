@@ -10,7 +10,20 @@
 		<aside>
 			<div id="sidebar" class="nav-collapse ">
 				<!-- sidebar menu start-->
-				<?php include './include/side-menu.php' ?>
+				<ul class="sidebar-menu" id="nav-accordion">
+                	<li>
+						<a class="sub-menu" href="index.php">
+                        	<i class="fa fa-dashboard"></i>
+                          	<span>หน้าแรก</span>
+                      	</a>
+                  	</li> 
+                  	<li>
+                      	<a class="active" href="form_wizard.php">
+                          	<i class="fa fa-tasks"></i>
+                          	<span>ลงทะเบียนนักเรียน</span>
+                      	</a>
+                  	</li>  
+				</ul>
 				<!-- sidebar menu end-->
 			</div>
 		</aside>
