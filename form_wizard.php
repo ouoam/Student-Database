@@ -263,6 +263,8 @@
             });
         });
 
+        //file upload
+        //thank https://stackoverflow.com/questions/23980733/jquery-ajax-file-upload-php
         $('#upload').on('click', function() {
             var file_data = $('#picTemp').prop('files')[0];
             var form_data = new FormData();
@@ -293,15 +295,17 @@
 
             e.preventDefault();
 
-            $("[name=stdID]").val($("[name=stdID]").val().replace(/ /g, ""));
-            $("[name=ppID]").val($("[name=ppID]").val().replace(/ - /g, ""));
-            $("[name=phone]").val($("[name=phone]").val().replace(/ - /g, ""));
+            $("[name=stdID]" ).val($("[name=stdID]" ).val().replace(/ /g, ""));
+            $("[name=ppID]"  ).val($("[name=ppID]"  ).val().replace(/ - /g, ""));
+            $("[name=phone]" ).val($("[name=phone]" ).val().replace(/ - /g, ""));
             $("[name=fPhone]").val($("[name=fPhone]").val().replace(/ - /g, ""));
             $("[name=mPhone]").val($("[name=mPhone]").val().replace(/ - /g, ""));
-            $("[name=bDay]").val($("[name=bDay]").val().split(" / ").reverse().join("-"));
+            $("[name=bDay]"  ).val($("[name=bDay]"  ).val().split(" / ").reverse().join("-"));
 
-            if (!checkID($("[name=ppID]").val()))
+            if (!checkID($("[name=ppID]").val())){
                 alert('รหัสประชาชนไม่ถูกต้อง');
+                return;
+            }
 
             $.ajax({
                 method: "POST",
@@ -315,7 +319,6 @@
                     alert(res.detail);
                 }
             });
-
         });
 
 
