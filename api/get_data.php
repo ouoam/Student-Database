@@ -12,6 +12,14 @@ $stmt->execute();
 
 // set the resulting array to associative
 $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-echo json_encode($stmt->fetchAll());
+
+$json_obj = $stmt->fetchAll();
+echo json_encode($json_obj);
+
+$fp = fopen('file.csv', 'w');
+
+foreach ($json_obj as $fields) {
+    fputcsv($fp, $fields);
+}
 
 ?>
