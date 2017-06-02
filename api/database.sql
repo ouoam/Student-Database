@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2017 at 07:33 AM
+-- Generation Time: Jun 02, 2017 at 04:04 PM
 -- Server version: 10.1.22-MariaDB
 -- PHP Version: 7.0.18
 
@@ -79,6 +79,7 @@ CREATE TABLE `std_personality` (
   `origin` varchar(20) DEFAULT NULL COMMENT 'Origin',
   `national` varchar(20) DEFAULT NULL COMMENT 'Nationality',
   `phone` varchar(20) DEFAULT NULL COMMENT 'Student phone',
+  `sick` varchar(50) DEFAULT NULL COMMENT 'Congenital disease',
   `pic` varchar(20) DEFAULT NULL COMMENT 'Picture URL'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
