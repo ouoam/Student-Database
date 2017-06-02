@@ -11,6 +11,7 @@ blood|Blood group
 origin|Origin
 national|Nationality
 phone|Student phone
+sick|Congenital disease
 pic|Picture URL
 
 ### School

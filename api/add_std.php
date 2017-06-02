@@ -3,7 +3,7 @@ include_once("db.php");
 include_once("function.php");
 
 //Personality
-$reqKey = array('pName', 'fName', 'lName', 'nName', 'bDay', 'ppID', 'blood', 'origin', 'national', 'phone', 'pic');
+$reqKey = array('pName', 'fName', 'lName', 'nName', 'bDay', 'ppID', 'blood', 'origin', 'national', 'phone', 'sick', 'pic');
 $prepareData = getMulPOST($reqKey);
 $userID = addData('std_personality', $prepareData);
 
