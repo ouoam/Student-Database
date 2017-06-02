@@ -370,15 +370,17 @@
                     url: "api/add_std.php",
                     data: $("#regist").serialize()
                 }).done(function(res) {
-                    if (res.status == "error") {
+                    if (res.status == "suscess") {
+                        alert("Save suscess!!");
+                    } else {
                         alert(res.detail);
                     }
-                    console.log(res);
                 });
 
             });
         </script>
 
+    </section>
 
 </body>
 

@@ -16,14 +16,8 @@ function printSuscess($key = NULL, $data = NULL) {
     exit;
 }
 
-function getMulPOST($nonReqKey = array(), $reqKey = array()) {
+function getMulPOST($reqKey = array()) {
     $data = array();
-
-    foreach($nonReqKey as $key) {
-        if(isset($_POST[$key])) {
-            $data[$key] = getPOST($key);
-        }
-    }
 
     foreach($reqKey as $key) {
         $data[$key] = getPOST($key, TRUE);

@@ -21,6 +21,11 @@ if(isset($_FILES["file"]["type"])) {
             $md5 = md5_file($_FILES['file']['tmp_name']);
             $sourcePath = $_FILES['file']['tmp_name'];
             $targetPath = "../upload/".$md5;
+
+            if (!file_exists('../upload')) {
+                mkdir('../upload', 0777, true);
+            }
+
             move_uploaded_file($sourcePath,$targetPath) ; // Moving Uploaded file
 
             printSuscess('file', $md5);
