@@ -26,7 +26,7 @@ $prepareData = getMulPOST($nonReqKey);
 $prepareData['userID'] = $userID;
 addData('std_address', $prepareData);
 
-
+printSuscess();
 
 
 ?>

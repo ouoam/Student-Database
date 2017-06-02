@@ -13,6 +13,7 @@ function printSuscess($key = NULL, $data = NULL) {
         $dataout[$key] = $data;
     }
     echo json_encode($dataout);
+    exit;
 }
 
 function getMulPOST($nonReqKey = array(), $reqKey = array()) {
@@ -39,8 +40,15 @@ function getPOST($name, $req = FALSE) {
             return NULL;
         }
     } else {
-        return $_POST[$name];
+        if($_POST[$name]==""||is_null($_POST[$name])) {
+            if($req) {
+                printError("POST '$name' key is not set");
+            } else {
+                return NULL;
+            }
+        }
     }
+    return $_POST[$name];
 }
 
 function getGET($name, $req = FALSE) {

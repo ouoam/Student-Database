@@ -103,25 +103,20 @@
                                   <fieldset title="ข้อมูลส่วนตัว" class="step" id="regist-step-0">
                                       <legend> </legend>
                                       <div class="form-group">
-                                          <div class="col-sm-2">
-                                                  <label class="control-label">รหัสนักเรียน</label>
-                                                  <input type="text" placeholder="" data-mask="9 9 9 9 9" class="form-control" name="stdID" id="stdID">
-                                                  <span class="help-inline"></span>
-                                          </div>
                                           <div class="col-lg-2">
                                               <label class="control-label">คำนำหน้า</label>
-                                              <select class="form-control m-bot15" name="pName">
+                                              <select class="form-control" name="pName">
                                                 <option value="Mr">นาย</option>
                                                 <option value="Miss">นาง</option>
                                                 <option value="S_Mr">เด็กชาย</option>
                                                 <option value="S_Miss">เด็กหญิง</option>
                                               </select>
                                           </div>
-                                          <div class="col-lg-2">
+                                          <div class="col-lg-3">
                                               <label class="control-label">ชื่อ</label>
                                               <input type="text" class="form-control" placeholder="" name="fName">
                                           </div>
-                                          <div class="col-lg-2">
+                                          <div class="col-lg-3">
                                               <label class=" control-label">นามสกุล</label>
                                               <input type="text" class="form-control" placeholder="" name="lName">
                                           </div>
@@ -129,24 +124,14 @@
                                               <label class="control-label">ชื่อเล่น</label>
                                               <input type="text" class="form-control" placeholder="" name="nName">
                                           </div>
-                                          <div class="col-sm-2">
+                                          <div class="col-lg-2">
                                                   <label class="control-label">วันเกิด</label>
                                                   <input type="text" placeholder="" data-mask="99 / 99 / 9999" class="form-control" name="bDay">
                                                   <span class="help-inline">วัน/เดือน/ปี พ.ศ</span>
                                           </div>
-                                          <div class="col-sm-3">
+                                          <div class="col-lg-3">
                                                   <label class="control-label">รหัสประชาชน</label>
                                                   <input type="text" placeholder="" data-mask="9 - 9999 - 99999 - 99 - 9" class="form-control" name="ppID">
-                                                  <span class="help-inline"></span>
-                                          </div>
-                                          <div class="col-lg-1">
-                                              <label class="control-label">กรุ๊ปเลือด</label>
-                                              <select class="form-control m-bot15" name="blood">
-                                                <option value="O">O</option>
-                                                <option value="B">B</option>
-                                                <option value="A">A</option>
-                                                <option value="AB">AB</option>
-                                              </select>
                                           </div>
                                           <div class="col-lg-2">
                                               <label class=" control-label">เชื้อชาติ</label>
@@ -160,11 +145,28 @@
                                               <label class="control-label">เบอร์โทรศัพท์</label>
                                               <input type="text" class="form-control" placeholder="" data-mask="999 - 9999999" name="phone">
                                           </div>
-                                          
-                                    
-										  <div class="col-lg-2">
+                                          <div class="col-lg-2">
+                                              <label class="control-label">กรุ๊ปเลือด</label>
+                                              <select class="form-control" name="blood">
+                                                <option value="O">O</option>
+                                                <option value="B">B</option>
+                                                <option value="A">A</option>
+                                                <option value="AB">AB</option>
+                                              </select>
+                                          </div>
+                                     </div>
+                                     <div class="form-group">
+                                        <div class="col-lg-2">
+                                                    <label class="control-label">รหัสนักเรียน</label>
+                                                  <input type="text" placeholder="" data-mask="9 9 9 9 9" class="form-control" name="stdID">
+                                          </div>
+                                          <div class="col-lg-2">
+                                                  <label class="control-label">รุ่นที่</label>
+                                                  <input type="text" class="form-control" name="gen">
+                                          </div>
+                                          <div class="col-lg-2">
                                               <label class="control-label">หอพัก</label>
-                                              <select class="form-control m-bot15" name="dorm">
+                                              <select class="form-control" name="dorm">
                                                 <option value="1">จุลินทิรา</option>
                                                 <option value="2">จุฬาพิลาส</option>
                                                 <option value="3">ภรคุณาศัย</option>
@@ -255,10 +257,9 @@
                                   <fieldset title="อัปโหลดรูป" class="step" id="regist-step-3" >
                                       <legend> </legend>
                                       <div class="form-group">
-                                            <div class="form-group last">
-                                          <label class="control-label col-md-2"></label>
-                                          <label class="control-label col-md-2">รูปประจำตัว</label>
-                                          <div class="col-md-8">
+                                        <div class="form-group last">
+                                          <label class="control-label col-xs-2 col-md-offset-3">รูปประจำตัว</label>
+                                          <div class="col-xs-5">
                                               <div class="fileupload fileupload-new" data-provides="fileupload">
                                                   <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
                                                       <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" />
@@ -268,15 +269,18 @@
                                                    <span class="btn btn-white btn-file">
                                                    <span class="fileupload-new"><i class="fa fa-paper-clip"></i> เลือกรูป</span>
                                                    <span class="fileupload-exists"><i class="fa fa-undo"></i> เปลี่ยน</span>
-                                                   <input type="file" class="default" name="pic"/>
+                                                   <input type="file" class="default" id="picTemp">
                                                    </span>
+                                                   <button type="button" class="btn btn-default" id="upload"><i class="fa fa-upload"></i> Upload</button>
                                                   </div>
+                                                  
                                               </div>
                                           </div>
                                       </div>
                                       </div>
                                   </fieldset>
-                                  <input type="submit" name="submit" class="finish btn btn-danger" value="บันทึก"/>
+                                  <input type="hidden" name="pic" value="">
+                                  <input type="submit" name="submit" id="submit" disabled="true" class="finish btn btn-danger" value="บันทึก"/>
                               </form>
                           </div>
                       </section>
@@ -323,16 +327,52 @@ $(function() {
     });
 });
 
+$('#upload').on('click', function() {
+    var file_data = $('#picTemp').prop('files')[0];
+    var form_data = new FormData();
+    form_data.append('file', file_data);
+    $.ajax({
+        url: 'api/upload.php', // point to server-side PHP script 
+        dataType: 'text',  // what to expect back from the PHP script, if anything
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,                         
+        type: 'post',
+        success: function(m){
+            var res = JSON.parse(m);
+            if(res.status=="suscess"){
+                $("[name=pic]").val(res.file);
+                $('#submit').prop('disabled', false);
+                alert("Upload suscess!!");
+            }else{
+                alert(res.detail);
+            }
+            
+        }
+     });
+});
+
 $('form').on('submit', function (e) {
 
     e.preventDefault();
 
+    $("[name=stdID]").val($("[name=stdID]").val().replace(/ /g, ""));
+    $("[name=ppID]").val($("[name=ppID]").val().replace(/ - /g, ""));
+    $("[name=phone]").val($("[name=phone]").val().replace(/ - /g, ""));
+    $("[name=fPhone]").val($("[name=fPhone]").val().replace(/ - /g, ""));
+    $("[name=mPhone]").val($("[name=mPhone]").val().replace(/ - /g, ""));
+    $("[name=bDay]").val($("[name=bDay]").val().split(" / ").reverse().join("-"));
+
     $.ajax({
 	    method : "POST",
-	    url    : "api/test.php",
+	    url    : "api/add_std.php",
 	    data   : $("#regist").serialize()
-	}).done(function( msg ) {
-        console.log(msg);
+	}).done(function( res ) {
+        if(res.status=="error"){
+            alert(res.detail);
+        }
+        console.log(res);
 	});
 
 });
