@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2017 at 04:04 PM
+-- Generation Time: Jun 02, 2017 at 04:26 PM
 -- Server version: 10.1.22-MariaDB
 -- PHP Version: 7.0.18
 
@@ -33,7 +33,7 @@ USE `std_db`;
 CREATE TABLE `std_address` (
   `userID` int(11) NOT NULL COMMENT 'User ID',
   `addNo` varchar(20) DEFAULT NULL COMMENT 'No. house',
-  `addArea` int(3) DEFAULT NULL COMMENT 'Area (Moo)',
+  `addArea` varchar(20) DEFAULT NULL COMMENT 'Area (Moo)',
   `addVill` varchar(20) DEFAULT NULL COMMENT 'Village',
   `addRoad` varchar(20) DEFAULT NULL COMMENT 'Road (Soi)',
   `addStreet` varchar(20) DEFAULT NULL COMMENT 'Street',
@@ -80,7 +80,7 @@ CREATE TABLE `std_personality` (
   `national` varchar(20) DEFAULT NULL COMMENT 'Nationality',
   `phone` varchar(20) DEFAULT NULL COMMENT 'Student phone',
   `sick` varchar(50) DEFAULT NULL COMMENT 'Congenital disease',
-  `pic` varchar(20) DEFAULT NULL COMMENT 'Picture URL'
+  `pic` varchar(33) DEFAULT NULL COMMENT 'Picture URL'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
