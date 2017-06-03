@@ -54,10 +54,10 @@
 											<div class="col-lg-2">
 												<label class="control-label">คำนำหน้า</label>
 												<select class="form-control" name="pName">
-														<option value="Mr">นาย</option>
-														<option value="Miss">นาง</option>
-														<option value="S_Mr">เด็กชาย</option>
-														<option value="S_Miss">เด็กหญิง</option>
+														<option value="นาย">นาย</option>
+														<option value="นางสาว">นางสาว</option>
+														<option value="เด็กชาย">เด็กชาย</option>
+														<option value="เด็กหญิง">เด็กหญิง</option>
 													</select>
 											</div>
 											<div class="col-lg-3">
@@ -115,11 +115,11 @@
 											<div class="col-lg-2">
 												<label class="control-label">หอพัก</label>
 												<select class="form-control" name="dorm">
-														<option value="1">จุลินทิรา</option>
-														<option value="2">จุฬาพิลาส</option>
-														<option value="3">ภรคุณาศัย</option>
-														<option value="4">วลัยคุณาศักดิ์</option>
-														<option value="5">ลักษณานุสรณ์</option>
+														<option value="จุลินทิรา">จุลินทิรา</option>
+														<option value="จุฬาพิลาส">จุฬาพิลาส</option>
+														<option value="ภรคุณาศัย">ภรคุณาศัย</option>
+														<option value="วลัยคุณาศักดิ์">วลัยคุณาศักดิ์</option>
+														<option value="ลักษณานุสรณ์">ลักษณานุสรณ์</option>
 													</select>
 											</div>
 											<div class="col-lg-6">
