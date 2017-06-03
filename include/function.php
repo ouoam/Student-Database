@@ -63,4 +63,24 @@ function getGET($name, $req = FALSE) {
     }
 }
 
+function format_ppID($in){
+    $in = substr_replace($in, '-', 12, 0);
+    $in = substr_replace($in, '-', 10, 0);
+    $in = substr_replace($in, '-', 5, 0);
+    $in = substr_replace($in, '-', 1, 0);
+    return $in;
+}
+
+function format_phone($in){
+    $in = substr_replace($in, ' ', 6, 0);
+    $in = substr_replace($in, ' ', 3, 0);
+    return $in;
+}
+
+function format_date($in){
+    $in = explode('-', $in);
+    $in = $in[2] . '/' . $in[1] . '/' . $in[0];
+    return $in;
+}
+
 ?>
