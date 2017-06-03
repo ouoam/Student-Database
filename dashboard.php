@@ -37,6 +37,7 @@
 							<table class="table table-striped table-advance table-hover">
 								<thead>
 									<tr>
+										<th><i></i> รูป</th>
 										<th><i></i> รหัสนักเรียน</th>
 										<th><i></i> ชื่อ</th>
 										<th><i></i> นามสกุล</th>
@@ -78,6 +79,7 @@
 			}).done(function(res) {
 				for(var i = 0; i < res.length; i++){
 					addContent = `<tr>
+										<td><img src="upload/${res[i].pic}" style="height: 100px;"></td>
 										<td>${pad(res[i].stdID, 5)}</td>
 										<td>${res[i].fName}</td>
 										<td>${res[i].lName}</td>
@@ -89,7 +91,6 @@
 												<input name="userID" type="hidden" value="${res[i].userID}">
 												<button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
 											</form>
-											
 											<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
 										</td>
 									</tr>`;
