@@ -40,12 +40,13 @@
 							<table class="table table-striped table-advance table-hover">
 								<thead>
 									<tr>
-										<th><i></i> รูป</th>
-										<th><i></i> รหัสนักเรียน</th>
-										<th><i></i> ชื่อ</th>
-										<th><i></i> นามสกุล</th>
-										<th><i></i> เบอร์โทรศัพท์</th>
-										<th><i></i> หอพัก</th>
+										<th>รูป</th>
+										<th>รหัสนักเรียน</th>
+										<th>ชื่อ</th>
+										<th>นามสกุล</th>
+										<th>ชื่อเล่น</th>
+										<th>เบอร์โทรศัพท์</th>
+										<th>หอพัก</th>
 										<th></th>
 									</tr>
 								</thead>
@@ -86,6 +87,7 @@
 										<td>${pad(res[i].stdID, 5)}</td>
 										<td>${res[i].fName}</td>
 										<td>${res[i].lName}</td>
+										<td>${res[i].nName}</td>
 										<td>${format_phone(res[i].phone)}</td>
 										<td><span class="label label-info label-mini">${res[i].dorm}</span></td>
 										<td>
