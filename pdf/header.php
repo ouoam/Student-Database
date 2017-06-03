@@ -41,11 +41,11 @@ class MYPDF extends TCPDF {
 			$cw = $this->w - $this->original_lMargin - $this->original_rMargin - ($headerdata['logo_width'] * 1.1);
 			$this->SetTextColorArray($this->header_text_color);
 			// header title
-			$this->SetFont($headerfont[0], 'B', $headerfont[2] + 1);
+			$this->SetFont($headerfont[0], $headerfont[1], $headerfont[2]);
 			$this->SetX($header_x);
 			$this->Cell($cw, $cell_height, $headerdata['title'], 0, 1, '', 0, '', 0);
 			// header string
-			$this->SetFont($headerfont[0], $headerfont[1], $headerfont[2] + 3);
+			$this->SetFont($headerfont[0], 'B', $headerfont[2] + 2);
 			$this->SetX($header_x);
 			$this->MultiCell($cw, $cell_height, $headerdata['string'], 0, '', 0, 1, '', '', true, 0, false, true, 0, 'T', false);
 			// print an ending header line
@@ -85,25 +85,10 @@ class MYPDF extends TCPDF {
 		//set style for cell border
 		$line_width = (0.85 / $this->k);
 		$this->SetLineStyle(array('width' => $line_width, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => $this->footer_line_color));
-		//print document barcode
-		$barcode = $this->getBarcode();
-		if (!empty($barcode)) {
-			$this->Ln($line_width);
-			$barcode_width = round(($this->w - $this->original_lMargin - $this->original_rMargin) / 3);
-			$style = array(
-				'position' => $this->rtl?'R':'L',
-				'align' => $this->rtl?'R':'L',
-				'stretch' => false,
-				'fitwidth' => true,
-				'cellfitalign' => '',
-				'border' => false,
-				'padding' => 0,
-				'fgcolor' => array(0,0,0),
-				'bgcolor' => false,
-				'text' => false
-			);
-			$this->write1DBarcode($barcode, 'C128', '', $cur_y + $line_width, '', (($this->footer_margin / 3) - $line_width), 0.3, $style, '');
-		}
+		
+        $footerfont = $this->getFooterFont();
+        $this->SetFont($footerfont[0], $footerfont[1], $footerfont[2] - 2);
+
 		$w_page = isset($this->l['w_page']) ? $this->l['w_page'].' ' : '';
 		if (empty($this->pagegroups)) {
 			$pagenumtxt = $w_page.$this->getAliasNumPage().' / '.$this->getAliasNbPages();
@@ -117,7 +102,10 @@ class MYPDF extends TCPDF {
 			$this->Cell(0, 0, $pagenumtxt, 'T', 0, 'L');
 		} else {
 			$this->SetX($this->original_lMargin);
-			$this->Cell(0, 0, $this->getAliasRightShift().$pagenumtxt, 'T', 0, 'R');
+            //$this->Cell(0, 0, 'Page ');
+            $this->Cell(0, 0, 'โรงเรียนจุฬาภรณราชวิทยาลัย พิษณุโลก (โรงเรียนวิทยาศาสตร์ภูมิภาค)', 'T', 1, 'C', 0, '', 0);
+            $this->Cell(0, 0, 'Princess Chulabhorn’s Science High School Phitsanulok', 0, 0, 'C', 0, '', 0);
+            $this->Cell(0, 0, $this->getAliasRightShift().$pagenumtxt, 0, 0, 'R');
 		}
 	}
 }

@@ -4,15 +4,13 @@ include_once("../include/function.php");
 //thank https://www.formget.com/ajax-image-upload-php/
 
 if(isset($_FILES["file"]["type"])) {
-    $validextensions = array("jpeg", "jpg", "png");
     if (
             (
                 ($_FILES["file"]["type"] == "image/png") || 
                 ($_FILES["file"]["type"] == "image/jpg") || 
                 ($_FILES["file"]["type"] == "image/jpeg")
             ) &&
-            ($_FILES["file"]["size"] < 10000000) &&
-            in_array(pathinfo($_FILES["file"]["name"], PATHINFO_EXTENSION), $validextensions)
+            ($_FILES["file"]["size"] < 10000000)
         )
     {
         if ($_FILES["file"]["error"] > 0) {
