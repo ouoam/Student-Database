@@ -32,6 +32,9 @@
 						<section class="panel">
 							<header class="panel-heading">
 								รายละเอียดข้อมูลนักเรียน
+								<span class="tools pull-right">
+									<button class="btn btn-info btn-xs" onclick="openInNewTab('pdf/print_pdf.php');"><i class="fa fa-print"></i> Print All</button>
+								</span>
 							</header>
 
 							<table class="table table-striped table-advance table-hover">
