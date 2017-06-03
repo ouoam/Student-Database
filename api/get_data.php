@@ -1,6 +1,6 @@
 <?php
-include_once("db.php");
-include_once("function.php");
+include_once("../include/db.php");
+include_once("../include/function.php");
 
 $sql = "SELECT * FROM `std_personality` AS D1
         JOIN `std_school`AS D2 ON D1.userID = D2.userID

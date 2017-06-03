@@ -1,5 +1,5 @@
 <?php
-include_once("function.php");
+include_once("../include/function.php");
 
 //thank https://www.formget.com/ajax-image-upload-php/
 

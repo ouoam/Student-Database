@@ -1,6 +1,6 @@
 <?php
-include_once("db.php");
-include_once("function.php");
+include_once("../include/db.php");
+include_once("../include/function.php");
 
 //Personality
 $reqKey = array('pName', 'fName', 'lName', 'nName', 'bDay', 'ppID', 'blood', 'origin', 'national', 'phone', 'sick', 'pic');
