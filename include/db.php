@@ -43,7 +43,15 @@ function getAllData(){
             JOIN `std_parent`AS D3 ON D1.userID = D3.userID
             JOIN `std_address`AS D4 ON D1.userID = D4.userID";
 
-    $stmt = $db_conn->prepare($sql); 
+    if(isset($_GET['key'])&&isset($_GET['value'])){
+        $key = $_GET['key'];
+        $sql .= " WHERE D1.$key = :value";            /* !!!! SQL injection !!!!  */
+        $stmt = $db_conn->prepare($sql);
+        $stmt->bindValue(':value', $_GET['value']);
+    }else{
+        $stmt = $db_conn->prepare($sql); 
+    }
+
     $stmt->execute();
 
     // set the resulting array to associative
