@@ -35,7 +35,7 @@ function addData($table, $data) {
     return $db_conn->lastInsertId();
 }
 
-function getAllData(){
+function getAllData($userID = NULL){
     global $db_conn;
     
     $sql = "SELECT * FROM `std_personality` AS D1
@@ -43,11 +43,10 @@ function getAllData(){
             JOIN `std_parent`AS D3 ON D1.userID = D3.userID
             JOIN `std_address`AS D4 ON D1.userID = D4.userID";
 
-    if(isset($_GET['key'])&&isset($_GET['value'])){
-        $key = $_GET['key'];
-        $sql .= " WHERE D1.$key = :value";            /* !!!! SQL injection !!!!  */
+    if(!is_null($userID)){
+        $sql .= " WHERE D1.userID = :value";
         $stmt = $db_conn->prepare($sql);
-        $stmt->bindValue(':value', $_GET['value']);
+        $stmt->bindValue(':value', $userID);
     }else{
         $stmt = $db_conn->prepare($sql); 
     }

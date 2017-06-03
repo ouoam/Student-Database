@@ -3,10 +3,10 @@
 require_once('header.php');
 
 include_once("../include/db.php");
-$data = getAllData();
+$data = getAllData( isset($_POST['userID'])?$_POST['userID']:NULL );
 
 // set document information
-$pdf->SetTitle('Student Database Export');
+$pdf->SetTitle('Student Database Export' ) ;
 $pdf->SetSubject('Database Export');
 
 // set default header data

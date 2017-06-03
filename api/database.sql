@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2017 at 04:26 PM
+-- Generation Time: Jun 03, 2017 at 03:14 PM
 -- Server version: 10.1.22-MariaDB
 -- PHP Version: 7.0.18
 
@@ -32,11 +32,11 @@ USE `std_db`;
 
 CREATE TABLE `std_address` (
   `userID` int(11) NOT NULL COMMENT 'User ID',
-  `addNo` varchar(20) DEFAULT NULL COMMENT 'No. house',
-  `addArea` varchar(20) DEFAULT NULL COMMENT 'Area (Moo)',
+  `addNo` varchar(10) DEFAULT NULL COMMENT 'No. house',
+  `addArea` varchar(3) DEFAULT NULL COMMENT 'Area (Moo)',
   `addVill` varchar(20) DEFAULT NULL COMMENT 'Village',
   `addRoad` varchar(20) DEFAULT NULL COMMENT 'Road (Soi)',
-  `addStreet` varchar(20) DEFAULT NULL COMMENT 'Street',
+  `addStreet` varchar(30) DEFAULT NULL COMMENT 'Street',
   `addSubDis` varchar(20) DEFAULT NULL COMMENT 'Sub District',
   `addDis` varchar(20) DEFAULT NULL COMMENT 'District',
   `addPro` varchar(20) DEFAULT NULL COMMENT 'Province',
@@ -51,15 +51,16 @@ CREATE TABLE `std_address` (
 
 CREATE TABLE `std_parent` (
   `userID` int(11) NOT NULL COMMENT 'User ID',
-  `ffName` varchar(20) DEFAULT NULL COMMENT 'Father first name',
-  `flName` varchar(20) DEFAULT NULL COMMENT 'Father last name',
-  `fJob` varchar(20) DEFAULT NULL COMMENT 'Father job',
-  `fPhone` varchar(20) DEFAULT NULL COMMENT 'Father Phone',
-  `mfName` varchar(20) DEFAULT NULL COMMENT 'Mother first name',
-  `mlName` varchar(20) DEFAULT NULL COMMENT 'Mother last name',
-  `mJob` varchar(20) DEFAULT NULL COMMENT 'Mother job',
-  `mPhone` varchar(20) DEFAULT NULL COMMENT 'Mother Phone'
+  `ffName` varchar(30) DEFAULT NULL COMMENT 'Father first name',
+  `flName` varchar(30) DEFAULT NULL COMMENT 'Father last name',
+  `fJob` varchar(40) DEFAULT NULL COMMENT 'Father job',
+  `fPhone` varchar(11) DEFAULT NULL COMMENT 'Father Phone',
+  `mfName` varchar(30) DEFAULT NULL COMMENT 'Mother first name',
+  `mlName` varchar(30) DEFAULT NULL COMMENT 'Mother last name',
+  `mJob` varchar(40) DEFAULT NULL COMMENT 'Mother job',
+  `mPhone` varchar(11) DEFAULT NULL COMMENT 'Mother Phone'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 -- --------------------------------------------------------
 
@@ -70,18 +71,19 @@ CREATE TABLE `std_parent` (
 CREATE TABLE `std_personality` (
   `userID` int(11) NOT NULL COMMENT 'User ID',
   `pName` varchar(20) DEFAULT NULL COMMENT 'Prefix name',
-  `fName` varchar(20) DEFAULT NULL COMMENT 'First name',
-  `lName` varchar(20) DEFAULT NULL COMMENT 'Last name',
+  `fName` varchar(30) DEFAULT NULL COMMENT 'First name',
+  `lName` varchar(30) DEFAULT NULL COMMENT 'Last name',
   `nName` varchar(20) DEFAULT NULL COMMENT 'Nick name',
   `bDay` date DEFAULT NULL COMMENT 'Birth day',
-  `ppID` varchar(20) DEFAULT NULL COMMENT 'Person ID',
+  `ppID` varchar(14) DEFAULT NULL COMMENT 'Person ID',
   `blood` enum('A','B','O','AB') DEFAULT NULL COMMENT 'Blood group',
   `origin` varchar(20) DEFAULT NULL COMMENT 'Origin',
   `national` varchar(20) DEFAULT NULL COMMENT 'Nationality',
-  `phone` varchar(20) DEFAULT NULL COMMENT 'Student phone',
+  `phone` varchar(11) DEFAULT NULL COMMENT 'Student phone',
   `sick` varchar(50) DEFAULT NULL COMMENT 'Congenital disease',
   `pic` varchar(33) DEFAULT NULL COMMENT 'Picture URL'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 -- --------------------------------------------------------
 
@@ -93,8 +95,9 @@ CREATE TABLE `std_school` (
   `userID` int(11) NOT NULL COMMENT 'User ID',
   `stdID` int(11) DEFAULT NULL COMMENT 'Student ID',
   `gen` int(11) DEFAULT NULL COMMENT 'School generation',
-  `dorm` int(11) DEFAULT NULL COMMENT 'Dormitory'
+  `dorm` varchar(20) DEFAULT NULL COMMENT 'Dormitory'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 --
 -- Indexes for dumped tables

@@ -85,7 +85,11 @@
 										<td><span class="label label-info label-mini">${res[i].dorm}</span></td>
 										<td>
 											<button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-											<button class="btn btn-info btn-xs" onclick="openInNewTab('pdf/print_pdf.php?key=userID&value=${res[i].userID}');"><i class="fa fa-print"></i></button>
+											<form action="pdf/print_pdf.php" method="post" target="_blank" class="btn form-inline" style="padding: 0px;">
+												<input name="userID" type="hidden" value="${res[i].userID}">
+												<button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
+											</form>
+											
 											<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
 										</td>
 									</tr>`;
