@@ -305,6 +305,11 @@
 					}
 					$('#submit').prop('disabled', false);
 					$("#img").attr("src","upload/"+res[0]['pic']);
+					$("[name=bDay]").val($("[name=bDay]").val().split("-").reverse().join(" / "));
+					$("[name=phone]" ).val( format_phone( $("[name=phone]" ).val() ) );
+					$("[name=fPhone]").val( format_phone( $("[name=fPhone]").val() ) );
+					$("[name=mPhone]").val( format_phone( $("[name=mPhone]").val() ) );
+					$("[name=ppID]"  ).val( format_ppID(  $("[name=ppID]"  ).val() ) );
 				});
 			}
 		});
@@ -391,6 +396,20 @@
 				alert('รหัสประชาชนไม่ถูกต้อง');
 				return;
 			}
+		}
+
+		function format_phone(numIn){
+			console.log(numIn);
+			strIn = numIn.toString();
+			strIn = strIn.slice(0, 3) + " " + strIn.slice(3,6) + " " + strIn.slice(6,10);
+			return strIn;
+		}
+		function format_ppID(numIn){
+			console.log(numIn);
+			strIn = numIn.toString();
+			strIn = strIn.slice(0, 1) + " - " + strIn.slice(1,5) + " - " + strIn.slice(5,10) +
+					" - " + strIn.slice(10,12) + " - " + strIn.slice(12,13);
+			return strIn;
 		}
 	</script>
 
