@@ -91,7 +91,7 @@
 											</div>
 											<div class="col-lg-2">
 												<label class="control-label">เบอร์โทรศัพท์</label>
-												<input type="text" class="form-control" placeholder="" data-mask="999 - 999 - 9999" name="phone">
+												<input type="text" class="form-control" placeholder="" data-mask="999 999 9999" name="phone">
 											</div>
 											<div class="col-lg-2">
 												<label class="control-label">กรุ๊ปเลือด</label>
@@ -142,7 +142,7 @@
 											</div>
 											<div class="col-lg-3">
 												<label class="control-label">เบอร์โทรศัพท์</label>
-												<input type="text" class="form-control" placeholder="" data-mask="999 - 999 - 9999" name="fPhone">
+												<input type="text" class="form-control" placeholder="" data-mask="999 999 9999" name="fPhone">
 											</div>
 										</div>
 										<div class="form-group">
@@ -160,7 +160,7 @@
 											</div>
 											<div class="col-lg-3">
 												<label class="control-label">เบอร์โทรศัพท์</label>
-												<input type="text" class="form-control" placeholder="" data-mask="999 - 999 - 9999" name="mPhone">
+												<input type="text" class="form-control" placeholder="" data-mask="999 999 9999" name="mPhone">
 											</div>
 										</div>
 
@@ -214,7 +214,7 @@
 												<div class="col-xs-5">
 													<div class="fileupload fileupload-new" data-provides="fileupload">
 														<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-															<img src="http://via.placeholder.com/200x150/EFEFEF/AAAAAA?text=no+image" alt="" />
+															<img src="http://via.placeholder.com/200x150/EFEFEF/AAAAAA?text=no+image" id="img" alt="" />
 														</div>
 														<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
 														<div>
@@ -240,6 +240,7 @@
 										</div>
 									</fieldset>
 									<input type="hidden" name="pic" value="">
+									<input type="hidden" name="userID" value="">
 									<input type="submit" name="submit" id="submit" disabled="true" class="finish btn btn-danger" value="บันทึก" />
 								</form>
 							</div>
@@ -278,6 +279,8 @@
 	<script>
 		//step wizard
 
+		var nowEdit = false;
+
 		$(function() {
 			$('#regist').stepy({
 				backLabel: 'ย้อนกลับ',
@@ -286,6 +289,24 @@
 				titleClick: true,
 				titleTarget: '.stepy-tab'
 			});
+
+			var url = window.location.href , idx = url.indexOf("#")
+			var hash = idx != -1 ? url.substring(idx+1) : "";
+			if(hash!=""){
+				nowEdit = true;
+				$.ajax({
+					method: "POST",
+					url: "api/get_data.php",
+					data: {userID : hash}
+				}).done(function(res) {
+					console.log(res[0]);
+					for(var key in res[0]){
+						$("[name=" + key + "]").val(res[0][key]);
+					}
+					$('#submit').prop('disabled', false);
+					$("#img").attr("src","upload/"+res[0]['pic']);
+				});
+			}
 		});
 
 		//file upload
@@ -321,21 +342,16 @@
 
 			e.preventDefault();
 
-			$("[name=stdID]" ).val($("[name=stdID]" ).val().replace(/ /g, ""));
-			$("[name=ppID]"  ).val($("[name=ppID]"  ).val().replace(/ - /g, ""));
-			$("[name=phone]" ).val($("[name=phone]" ).val().replace(/ - /g, ""));
-			$("[name=fPhone]").val($("[name=fPhone]").val().replace(/ - /g, ""));
-			$("[name=mPhone]").val($("[name=mPhone]").val().replace(/ - /g, ""));
-			$("[name=bDay]"  ).val($("[name=bDay]"  ).val().split(" / ").reverse().join("-"));
+			formatForm();
 
-			if (!checkID($("[name=ppID]").val())){
-				alert('รหัสประชาชนไม่ถูกต้อง');
-				return;
+			var goURL = "api/add_std.php";
+			if(nowEdit){
+				goURL = "api/upd_std.php";
 			}
 
 			$.ajax({
 				method: "POST",
-				url: "api/add_std.php",
+				url: goURL,
 				data: $("#regist").serialize()
 			}).done(function(res) {
 				if (res.status == "suscess") {
@@ -357,6 +373,20 @@
 			if ((11 - sum % 11) % 10 != parseFloat(id.charAt(12)))
 				return false;
 			return true;
+		}
+
+		function formatForm(){
+			$("[name=stdID]" ).val($("[name=stdID]" ).val().replace(/ /g, ""));
+			$("[name=ppID]"  ).val($("[name=ppID]"  ).val().replace(/ - /g, ""));
+			$("[name=phone]" ).val($("[name=phone]" ).val().replace(/ /g, ""));
+			$("[name=fPhone]").val($("[name=fPhone]").val().replace(/ /g, ""));
+			$("[name=mPhone]").val($("[name=mPhone]").val().replace(/ /g, ""));
+			$("[name=bDay]"  ).val($("[name=bDay]"  ).val().split(" / ").reverse().join("-"));
+
+			if (!checkID($("[name=ppID]").val())){
+				alert('รหัสประชาชนไม่ถูกต้อง');
+				return;
+			}
 		}
 	</script>
 

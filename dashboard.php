@@ -91,7 +91,7 @@
 										<td>${format_phone(res[i].phone)}</td>
 										<td><span class="label label-info label-mini">${res[i].dorm}</span></td>
 										<td>
-											<button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+											<button class="btn btn-primary btn-xs" onclick="openInNewTab('form_wizard.php#${res[i].userID}');"><i class="fa fa-pencil"></i></button>
 											<form action="pdf/print_pdf.php" method="post" target="_blank" class="btn form-inline" style="padding: 0px;">
 												<input name="userID" type="hidden" value="${res[i].userID}">
 												<button class="btn btn-info btn-xs"><i class="fa fa-print"></i></button>
