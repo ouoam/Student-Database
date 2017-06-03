@@ -16,10 +16,4 @@ $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 $json_obj = $stmt->fetchAll();
 echo json_encode($json_obj);
 
-$fp = fopen('file.csv', 'w');
-
-foreach ($json_obj as $fields) {
-    fputcsv($fp, $fields);
-}
-
 ?>
