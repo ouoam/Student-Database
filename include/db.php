@@ -31,10 +31,29 @@ function addData($table, $data) {
         $sqlValue     .= ":$key, ";
         $bind[":$key"] = $value;
     }
+
     $sqlKey   = str_split($sqlKey  , strlen($sqlKey)   - 2)[0];
     $sqlValue = str_split($sqlValue, strlen($sqlValue) - 2)[0];
 
     $sth = $db_conn->prepare("INSERT INTO `$table` ($sqlKey) VALUES ($sqlValue);");
+    $sth->execute($bind);
+    return $db_conn->lastInsertId();
+}
+
+function updData($table, $data, $userID) {
+    global $db_conn;
+
+    $sqlSet   = '';
+    $bind     = array();
+    foreach($data as $key => $value){
+        $sqlSet       .= "`$key` = :$key, ";
+        $bind[":$key"] = $value;
+    }
+    
+    $sqlSet   = str_split($sqlSet  , strlen($sqlSet)   - 2)[0];
+
+    $sth = $db_conn->prepare("UPDATE `$table` SET $sqlSet WHERE `$table`.`userID` = :userID;");
+    $bind[":userID"] = $userID;
     $sth->execute($bind);
     return $db_conn->lastInsertId();
 }

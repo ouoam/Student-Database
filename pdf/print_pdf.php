@@ -3,7 +3,7 @@
 require_once('header.php');
 
 include_once("../include/db.php");
-$data = getAllData( isset($_POST['userID'])?$_POST['userID']:NULL );
+$data = getAllData( getPOST('userID') );
 
 // set document information
 $pdf->SetTitle('Student Database Export' ) ;

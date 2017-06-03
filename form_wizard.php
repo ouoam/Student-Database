@@ -356,7 +356,11 @@
 			}).done(function(res) {
 				if (res.status == "suscess") {
 					alert("Save suscess!!");
-					location.reload();
+					if(nowEdit){
+						window.close();
+					}else{
+						location.reload();
+					}
 				} else {
 					alert(res.detail);
 				}
